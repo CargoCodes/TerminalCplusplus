@@ -1,6 +1,6 @@
 # TerminalCplusplus
 
-Library that allows you to call terminal commands in C++ whithout discarding director changes (unlike system() command does).
+Library that allows you to call terminal commands in C++ whithout discarding directory changes (unlike system() command does).
 
 `Usage:`
 
