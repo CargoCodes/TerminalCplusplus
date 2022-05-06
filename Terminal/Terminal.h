@@ -10,7 +10,7 @@ using namespace std;
 class Terminal {
 public:
 
-    explicit TerminalCpp(bool output=false) : output_(output) {}
+    explicit Terminal(bool output=false) : output_(output) {}
 
     string type(const string& command);
 
