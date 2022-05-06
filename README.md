@@ -19,11 +19,11 @@ Only one straight-forward method: type. Pass inside it the command you want to b
     
 To clear the memory of directory changes, returning back to the project folder:
 
-    term.clear()
+    term.clear();
     
 To change the output return state (if false, there will be an empty string as return value):
 
-    term.setOutput()
+    term.setOutput(false);
 
 `Example:`
 
