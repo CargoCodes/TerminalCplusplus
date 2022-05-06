@@ -4,7 +4,7 @@ Library that allows you to call terminal commands in C++ whithout discarding dir
 
 `Usage:`
 
-    #include "Terminal"
+    #include "Terminal.h"
     
 Create a terminal object. Pass true or false sa argument if you want (or not) to have back the output.
   
