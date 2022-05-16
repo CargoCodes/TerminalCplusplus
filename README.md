@@ -1,8 +1,8 @@
 # TerminalCplusplus
 
-Library that allows you to call terminal commands in C++ whithout discarding directory changes (unlike system() command does).
+### Library that allows to call terminal commands in C++ whithout discarding directory changes (unlike built-in system() method does).
 
-`Usage:`
+## `Usage:`
 
     #include "Terminal.h"
     
@@ -10,11 +10,11 @@ Create a terminal object. Pass true or false sa argument if you want (or not) to
   
     Terminal term = Terminal(true);
     
-Only one straight-forward method: type. Pass inside it the command you want to be executed.  
+One straight-forward method: type. Pass inside it the command you want to be executed.  
 
-    string output = term.type("pwd");
+    std::string output = term.type("pwd");
     
-    // in this case, it stores the current path in "output"
+    // in this case, it stores the current path in "output" variable
     
     
 To clear the memory of directory changes, returning back to the project folder:
@@ -25,7 +25,11 @@ To change the output return state (if false, there will be an empty string as re
 
     term.setOutput(false);
 
-`Example:`
+To remove the last directory change (useful in case of mistake, or in case the directory gets removed):
+    
+    term.removeLastCD();
+
+## `Example:`
 
 Imagine a basic directory tree:
 

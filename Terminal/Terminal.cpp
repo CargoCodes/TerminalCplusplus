@@ -1,6 +1,6 @@
 #include "Terminal.h"
 
-string Terminal::type(const string& command) {
+string TerminalCpp::type(const string& command) {
     bool check = checkStore(command); // checks if the cuurent command is "cd"
     string output;
 
@@ -11,7 +11,7 @@ string Terminal::type(const string& command) {
     } else {
         if(oldCds_.len() >= 1) { // if there is any stored command
             string commands = oldCds_.join("; "); // joins all the stored commands, separating the with "; "
-            strList cmdList = adjustCommand(command); // splits the current command to check if the current command is "clear"
+            strList cmdList = adjustCommand(command); // splits the current command to check if it's "clear"
 
             if(cmdList[0] == "clear")  // if it's "clear", executes it normally
                 system("clear");
@@ -33,12 +33,12 @@ string Terminal::type(const string& command) {
         return "";
 }
 
-std::string Terminal::exec(const char* cmd) {
-    char buffer[512];
-    std::string output;
+string TerminalCpp::exec(const char* cmd) {
+    char buffer[2048];
+    string output;
 
     FILE* pipe = popen(cmd, "r");
-    if (!pipe) throw std::runtime_error("pipe failure");
+    if (!pipe) throw std::runtime_error("popen() failed!");
     try {
         while (fgets(buffer, sizeof(buffer), pipe) != NULL)
             output += buffer;
